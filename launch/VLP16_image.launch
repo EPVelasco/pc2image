@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="maxlen"               type="double" value="50" />    
+    <param name="minlen"               type="double" value="5" />    
+    <param name="angular_resolution_x" type="double" value="0.25" />
+    <param name="angular_resolution_y" type="double" value="0.85" />
+    <param name="max_angle_width"      type="double" value="10" />
+    <param name="max_angle_height"     type="double" value="360" />
+
+    <node pkg="pc2image" type="pc2image_node" name="pc2image_node" output="screen"/>
+  
+</launch>
