@@ -23,6 +23,7 @@ float angular_resolution_x = 0.25f;
 float angular_resolution_y = 0.85f;
 float max_angle_width= 360.0f;
 float max_angle_height = 360.0f;
+std::string pcTopic = "/velodyne_points";
 
 
 void callback(const PointCloud::ConstPtr& msg_pointCloud)
@@ -61,7 +62,7 @@ void callback(const PointCloud::ConstPtr& msg_pointCloud)
         if(std::isinf(r) || r<minlen || r>maxlen){
             continue;
         }
-        unsigned short range = 1 - (pow(2,16)/ (maxlen - minlen))*(r-minlen);
+        unsigned short range = 1-(pow(2,16)/ (maxlen - minlen))*(r-minlen);
         dephtImage.at<ushort>(j, i) = range;
     }
 
@@ -83,8 +84,10 @@ int main(int argc, char** argv)
   nh.getParam("/angular_resolution_y", angular_resolution_y);
   nh.getParam("/max_angle_width", max_angle_width);
   nh.getParam("/max_angle_height", max_angle_height);
+  nh.getParam("/pcTopic", pcTopic);
 
-  ros::Subscriber sub = nh.subscribe<PointCloud>("/velodyne_points", 10, callback);
+
+  ros::Subscriber sub = nh.subscribe<PointCloud>(pcTopic, 10, callback);
   rngSpheric = boost::shared_ptr<pcl::RangeImageSpherical>(new pcl::RangeImageSpherical);
   imgD_pub = nh.advertise<sensor_msgs::Image>("/depht_image", 10);
   ros::spin();
