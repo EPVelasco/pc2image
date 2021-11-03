@@ -7,7 +7,7 @@
     <param name="angular_resolution_y" type="double" value="2" />
     <param name="max_angle_width"      type="double" value="360" />
     <param name="max_angle_height"     type="double" value="360" />
-    <param name="pcTopic"       type="str"    value="/points2" />
+    <param name="pcTopic"       type="str"    value="/velodyne_points" />
 
     <node pkg="pc2image" type="pc2image_node" name="pc2image_node" output="screen"/>
   
