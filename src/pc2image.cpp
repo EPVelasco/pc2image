@@ -89,7 +89,7 @@ int main(int argc, char** argv)
 
   ros::Subscriber sub = nh.subscribe<PointCloud>(pcTopic, 10, callback);
   rngSpheric = boost::shared_ptr<pcl::RangeImageSpherical>(new pcl::RangeImageSpherical);
-  imgD_pub = nh.advertise<sensor_msgs::Image>("/depht_image", 10);
+  imgD_pub = nh.advertise<sensor_msgs::Image>("/depth_image", 10);
   ros::spin();
   return 0;
 }
