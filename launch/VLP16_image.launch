@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
-    <param name="maxlen"               type="double" value="20" />    
+    <param name="maxlen"               type="double" value="150" />    
     <param name="minlen"               type="double" value="0" />    
-    <param name="angular_resolution_x" type="double" value="0.5" />
-    <param name="angular_resolution_y" type="double" value="2" />
+    <param name="angular_resolution_x" type="double" value="0.25" />
+    <param name="angular_resolution_y" type="double" value="1.6" />
     <param name="max_angle_width"      type="double" value="360" />
     <param name="max_angle_height"     type="double" value="360" />
     <param name="pcTopic"       type="str"    value="/velodyne_points" />
