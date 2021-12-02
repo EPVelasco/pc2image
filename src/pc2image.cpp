@@ -17,6 +17,7 @@ ros::Publisher imgD_pub;
 boost::shared_ptr<pcl::RangeImageSpherical> rngSpheric;
 pcl::RangeImage::CoordinateFrame coordinate_frame = pcl::RangeImage::LASER_FRAME;
 
+
 float maxlen =500;
 float minlen = 0.1;
 float angular_resolution_x = 0.25f;
@@ -46,7 +47,7 @@ void callback(const PointCloud::ConstPtr& msg_pointCloud)
 
   rngSpheric->pcl::RangeImage::createFromPointCloud(*cloud_out, pcl::deg2rad(angular_resolution_x), pcl::deg2rad(angular_resolution_y),
                                        pcl::deg2rad(max_angle_height), pcl::deg2rad(max_angle_height),
-                                       Eigen::Affine3f::Identity(), coordinate_frame, 0.0f, 0.0f, 0);
+                                       Eigen::Affine3f::Identity(), coordinate_frame, 0.0, 0.0f, 0);
 
   rngSpheric->header.frame_id = cloud_out->header.frame_id;
   rngSpheric->header.stamp    = cloud_out->header.stamp;
