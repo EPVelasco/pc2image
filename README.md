@@ -1,8 +1,9 @@
 # pc2image
 This code converts a point cloud obtained by a Velodyne VLP16 3D-Lidar sensor into a depth image mono16.
+This code uses the Z axis information to reconstruct the point cloud with the image2pc package.
 
 <p float="left">
-  <img src="/images/pc2image.GIF" width="770"  />
+  <img src="/images/pc2image.png" width="770"  />
 </p>
 
 ## Requisites
@@ -16,7 +17,7 @@ This code converts a point cloud obtained by a Velodyne VLP16 3D-Lidar sensor in
 ## Clone repository
 ```
     cd ~/catkin_ws/src
-    git clone https://github.com/EPVelasco/pc2image.git
+    git clone https://github.com/EPVelasco/pc2image.git -b depthImage_zImage
     cd ..
     catkin_make --only-pkg-with-deps pc2image
 ```
