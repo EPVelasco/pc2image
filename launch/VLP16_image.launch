@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-    <param name="maxlen"               type="double" value="150" />    
-    <param name="minlen"               type="double" value="0" />    
-    <param name="angular_resolution_x" type="double" value="0.25" />
-    <param name="angular_resolution_y" type="double" value="1.6" />
+    <param name="maxlen"               type="double" value="100.0" />    
+    <param name="minlen"               type="double" value="0.001" />    
+    <param name="angular_resolution_x" type="double" value="0.5" />
+    <param name="angular_resolution_y" type="double" value="2.065"/>
     <param name="max_angle_width"      type="double" value="360" />
-    <param name="max_angle_height"     type="double" value="360" />
+    <param name="max_angle_height"     type="double" value="180" />
     <param name="pcTopic"       type="str"    value="/velodyne_points" />
-
-    <node pkg="pc2image" type="pc2image_node" name="pc2image_node" output="screen"/>
+    <node pkg="pc2image" type="pc2image_node" name="pc2image_node" />
   
 </launch>
